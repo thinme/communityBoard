@@ -1,0 +1,11 @@
+package com.board.dao;
+
+import java.util.List;
+
+import com.board.dto.BoardInfoDto;
+
+public interface BoardInfoDao {
+	
+	public List<BoardInfoDto> getReadBoardInfo();
+
+}

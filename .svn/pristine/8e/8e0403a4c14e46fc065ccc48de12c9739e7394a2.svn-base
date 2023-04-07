@@ -1,0 +1,28 @@
+package com.board.controller;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.board.serv.BoardServ;
+import com.board.servImpl.BoardServImpl;
+
+@Controller
+public class BoardController {
+	
+	
+	@Autowired
+	BoardServImpl bsi;
+	
+	@RequestMapping(value="/index")
+	public String name(Model model) {
+
+		model.addAttribute("name", bsi.name());
+		
+		return "test";
+	}
+
+}

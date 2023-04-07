@@ -1,0 +1,31 @@
+package com.board.servImpl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.board.dao.BoardInfoDao;
+import com.board.dto.BoardInfoDto;
+import com.board.serv.BoardInfoServ;
+
+@Service
+public class BoardInfoServImpl implements BoardInfoServ {
+
+	@Autowired
+	private BoardInfoDao bdo;
+
+	@Override
+	public HashMap<String, Object> getReadBoardInfo() {
+		
+		HashMap<String, Object> resMap = new HashMap<String, Object>();
+		resMap.put("getReadBoardInfo", bdo.getReadBoardInfo());
+		
+		return resMap;
+	}
+	
+	
+
+}

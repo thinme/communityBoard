@@ -1,0 +1,19 @@
+package com.board.serv;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.board.dto.BoardInsertDto;
+
+
+
+
+public interface BoardInfoServ {
+
+	public List<Map<String, Object>> getReadBoardInfo();
+	
+	public String insertBoardInfo(BoardInsertDto req);
+
+
+}

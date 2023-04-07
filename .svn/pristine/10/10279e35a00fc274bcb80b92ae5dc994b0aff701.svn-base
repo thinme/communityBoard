@@ -1,0 +1,26 @@
+package com.board.daoImpl;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.board.dao.BoardInfoDao;
+import com.board.dto.BoardInfoDto;
+
+@Repository
+public class BoardInfoDaoImpl implements BoardInfoDao {
+	
+	@Autowired
+	SqlSessionTemplate tpl;
+
+	@Override
+	public List<BoardInfoDto> getReadBoardInfo() {
+		// TODO Auto-generated method stub
+		return tpl.selectList("BoardInfoDao.getReadBoardInfo");
+	}
+	
+	
+
+}

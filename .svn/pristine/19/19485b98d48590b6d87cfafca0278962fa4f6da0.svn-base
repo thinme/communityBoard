@@ -1,0 +1,9 @@
+package com.board.dao;
+
+import java.util.Map;
+
+public interface MemberInfoDao {
+	
+	public Map<String, Object> name();
+
+}

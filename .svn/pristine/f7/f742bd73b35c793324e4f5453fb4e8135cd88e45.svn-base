@@ -1,0 +1,57 @@
+$(document).ready(function () {
+	/*$("#insertBtn").on("click", function () {
+		// 상대경로 이므로 './insertOk'임
+		$.ajax({
+			url: "./insertOk",
+			url: "./setBoardInsert",
+			type: "POST",
+			data: $("#insertFrm").serialize(),
+			dataType: "text",
+			async: false,
+			success: function(result) {
+				if(result == "Y") {
+					alert("저장이 완료되었습니다.");
+					// 메인 페이지로 이동
+					location.href="/getBoardList";					
+				} else {
+					alert("등록 실패!!!");
+				}
+			},
+			error: function() {
+				alert("error");
+			}
+		});
+	});*/
+	
+	$("#insertBtn").click(function(){
+		var id = $("#id").val();
+		var title = $("#title").val();
+		/*
+		alert('등록 이벤트');*/
+		
+		//$('#registerBtn').attr('type','submit');
+		if(id.trim() == '') {
+			alert('id를 입력해 주세요');
+			return;
+		} else if(id.trim().length > 10) {
+				alert("아이디는 최대 10자까지 입력 가능합니다.");
+				$("#id").val('');
+				$("#id").focus();
+				return;
+		} else if(title.trim() == '') {
+			alert('제목를 입력해 주세요');
+			return;
+		} else if(title.trim().length > 30) {
+				alert("제목은 최대 30자까지 입력 가능합니다.");
+				$("#title").val('');
+				$("#title").focus();
+				return;
+		}
+		//document.querySelector('#insertBtn').setAttribute('type','submit');
+		$("#insertFrm").submit();
+	});
+	
+});
+/*function insertFunc() {
+	alert("야야야양야야양ㅇ야야ㅑ");
+}*/

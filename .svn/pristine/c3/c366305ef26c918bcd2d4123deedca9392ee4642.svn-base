@@ -1,0 +1,28 @@
+
+
+$(document).ready(function () {
+
+		$("#loginBtn").on("click", function () {
+			
+			$.ajax({
+				url: "./loginCheck",
+				type: "POST",
+				data: $("#loginFrm").serialize(),
+				dataType: "text",
+				async: false,
+				success: function (result) {
+					if (result == "Y") {
+						alert("로그인 성공");
+						//$("#loginFrm").attr("action", "./boardList").submit();
+					} else {
+						alert("아이디와 비밀번호가 맞지 않습니다.");
+					}
+				},
+				error: function (request, status, error) {
+					alert("code:" + request.status);
+					alert("message:" + request.responseText);
+					alert("error:" + error);
+				}
+			});
+		});
+	});

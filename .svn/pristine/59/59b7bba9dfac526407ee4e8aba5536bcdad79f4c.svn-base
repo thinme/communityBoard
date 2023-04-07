@@ -1,0 +1,23 @@
+package com.board.servImpl;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.board.dao.BoardDao;
+import com.board.serv.BoardServ;
+
+@Service
+public class BoardServImpl implements BoardServ {
+
+	@Autowired
+	private BoardDao bdo;
+	
+	@Override
+	public Map<String, Object> name() {
+		
+		return bdo.name();
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.board.controller;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.board.servImpl.BoardServImpl;
+
+@Controller
+public class MemberInfoController {
+	
+	
+	@Autowired
+	MemberServImpl msi;
+	
+	@RequestMapping(value="/index")
+	public HashMap<String, Object> setCreateMemberInfo(Model model) {
+
+		model.addAttribute("name", bsi.name());
+		
+		return "test";
+	}
+
+}

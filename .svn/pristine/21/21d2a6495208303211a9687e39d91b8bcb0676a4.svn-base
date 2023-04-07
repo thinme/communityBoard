@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글 목록</title>
+</head>
+<body>
+<div class="btn">
+<button type="button" id="regBtn">게시글작성</button>
+<button type="button" onclick="boardDeleteChkList()">삭제</button>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일자</th>
+			<th>수정일자</th>
+		<tr>
+	</thead>
+	<tbody>
+	
+		<c:forEach items="${list}" var="getBoardList">
+			 <tr ondblclick="goDetail(${getBoardList.SEQ_BOARD})">
+				<td onclick="" style="width:50px; text-align:center;">${getBoardList.SEQ_BOARD}</td>
+				<td style="width:100px;">${getBoardList.TITLE}</td>
+				<td style="width:100px;">${getBoardList.ID}</td>
+				<td style="width:110px; text-align:center;">${getBoardList.REG_DATE}</td>
+				<td style="width:110px; text-align:center;">${getBoardList.MOD_DATE}</td>
+			</tr> 
+		</c:forEach>
+	</tbody>
+</table>
+</body>
+</html>

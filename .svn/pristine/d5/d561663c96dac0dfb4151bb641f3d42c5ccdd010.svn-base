@@ -1,0 +1,35 @@
+package com.board.daoImpl;
+
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import com.board.dao.BoardDao;
+import com.board.dao.MemberInfoDao;
+import com.board.dto.CreateMemberInfoDto;
+import com.board.serv.BoardServ;
+
+@Repository
+public class MemberInfoDaoImpl implements MemberInfoDao {
+	
+	@Autowired
+	SqlSessionTemplate tpl;
+	
+	public Map<String, Object> name() {
+		Map<String, Object> name =  tpl.selectOne("BoardDao.name");
+		
+		return tpl.selectOne("BoardDao.name");
+	}
+
+	@Override
+	public int setCreateMemberInfo(CreateMemberInfoDto req) {
+		
+		return tpl.insert("MemberInfoDao.memberInsertInfo", req);
+	}
+	
+	
+
+}

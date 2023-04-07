@@ -1,0 +1,27 @@
+package com.board.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.board.dto.CreateMemberInfoDto;
+import com.board.servImpl.MemberInfoServImpl;
+
+@Controller
+public class MemberInfoController {
+	
+	
+	@Autowired
+	MemberInfoServImpl msi;
+	
+	@RequestMapping(value={"/setCreateMemberInfo"}, method=RequestMethod.POST)
+	public String setCreateMemberInfo(CreateMemberInfoDto req) {
+		
+		
+		
+		return msi.setCreateMemberInfo(req);
+	}
+
+}

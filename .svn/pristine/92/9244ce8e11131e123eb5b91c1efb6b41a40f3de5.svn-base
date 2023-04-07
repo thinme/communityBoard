@@ -1,0 +1,9 @@
+package com.board.serv;
+
+import java.util.Map;
+
+public interface BoardServ {
+	
+	public Map<String, Object> name();
+
+}

@@ -1,0 +1,9 @@
+package com.board.serv;
+
+import java.util.Map;
+
+public interface MemberInfoServ {
+	
+	public Map<String, Object> name();
+
+}

@@ -1,0 +1,37 @@
+$(document).ready(function () {
+	/*$("#insertBtn").on("click", function () {
+		// 상대경로 이므로 './insertOk'임
+		$.ajax({
+			url: "./insertOk",
+			url: "./setBoardInsert",
+			type: "POST",
+			data: $("#insertFrm").serialize(),
+			dataType: "text",
+			async: false,
+			success: function(result) {
+				if(result == "Y") {
+					alert("저장이 완료되었습니다.");
+					// 메인 페이지로 이동
+					location.href="/getBoardList";					
+				} else {
+					alert("등록 실패!!!");
+				}
+			},
+			error: function() {
+				alert("error");
+			}
+		});
+	});*/
+	
+	$("#insertBtn").click(function(){
+		alert('등록 이벤트');
+		
+			//$('#registerBtn').attr('type','submit');
+			document.querySelector('#insertBtn').setAttribute('type','submit');
+		
+	})
+	
+});
+/*function insertFunc() {
+	alert("야야야양야야양ㅇ야야ㅑ");
+}*/

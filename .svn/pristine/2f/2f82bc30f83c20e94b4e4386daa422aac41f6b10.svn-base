@@ -1,0 +1,13 @@
+package com.board.serv;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.context.annotation.Primary;
+
+
+public interface BoardInfoServ {
+	
+	public List<Map<String, Object>> getReadBoardInfo();
+
+}

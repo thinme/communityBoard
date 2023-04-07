@@ -1,0 +1,30 @@
+package com.board.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.board.serv.BoardInfoServ;
+
+@Controller
+public class BoardInfoController {
+	
+	
+	@Autowired
+	private BoardInfoServ bsi;
+	
+	@RequestMapping(value="/board/getBoardList")
+	public Model home(Model model) {
+		model.addAttribute("list", bsi.getReadBoardInfo());
+		return model;
+	}
+	
+//	@RequestMapping(value="/getBoardList", method=RequestMethod.GET)
+//	public Map<String, Object> getReadBoardList() {
+//		System.out.println("************boardcontroller***********");
+//		
+//		return bsi.getReadBoardInfo();
+//	}
+
+}

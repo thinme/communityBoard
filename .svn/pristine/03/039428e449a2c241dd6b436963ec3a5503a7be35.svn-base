@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDao">
+
+	<insert id="memberInsertInfo" parameterType="map">
+	/*memberDao.memberInsertInfo*/
+		INSERT INTO YOUTUBE_JJH.BOARDINFO(
+			SEQ_MEMBER
+			,ID
+			,NAME
+			,PASSWORD
+			,REG_DATE
+			,MOD_DATE
+		)VALUES(
+			YOUTUBE_JJH.seq_member.NEXTVAL
+			,#{id}
+			,#{name}
+			,#{password}
+			,SYSDATE
+			,SYSDATE
+		)
+	</insert>
+	
+	<update id="memberUpdateInfo" parameterType="map">
+		UPDATE YOUTUBE_JJH.MEMBER_INFO
+		SET 
+			NAME = #{NAME}
+			,PASSWORD =#{PASSWORD}
+			,MOD_DATE = SYSDATE 
+		WHERE SEQ_MEMBER = #{SEQ_MEMBER}
+	</update>
+
+	
+	
+</mapper>

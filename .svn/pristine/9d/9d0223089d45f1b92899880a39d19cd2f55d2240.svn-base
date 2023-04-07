@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardDao">
+	<select id="name" resultType="Map">
+		/*boardDao.test.박혁진*/
+		SELECT 팀명 as name 
+		FROM YOUTUBE_JJH.팀별성적 WHERE 팀명='G팀'
+	</select>
+
+</mapper>

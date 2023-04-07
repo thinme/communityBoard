@@ -1,0 +1,74 @@
+package com.board.servImpl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.board.dao.BoardInfoDao;
+import com.board.dto.BoardInsertDto;
+import com.board.serv.BoardInfoServ;
+
+
+
+@Service
+public class BoardInfoServImpl implements BoardInfoServ {
+
+	@Autowired
+	private BoardInfoDao bdo;
+
+	@Override
+	public List<Map<String, Object>> getReadBoardInfo() {
+		System.out.println("************boardServImpl***********");
+		List<Map<String, Object>> list = bdo.getReadBoardInfo();
+		System.out.println(list);
+		return list;
+	}
+
+	// insert
+	@Override
+	public String insertBoardInfo(BoardInsertDto req) {
+		int count = 0;
+		count = bdo.insertBoardInfo(req);
+		
+		System.out.println(count);
+		System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ" + req.getId());
+		System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ" + req.getTitle());
+		System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ" + req.getContents());
+		String result= "";
+		try {
+			if (count == 1) {
+				result = "Y";
+				System.out.println("성공(Y)");
+			}else {
+				result = "N";
+			}
+		} catch (Exception e) {
+			System.out.println("에러 메세지" + e);
+		}
+		
+		return result;
+		
+//	@Override
+//	public String insertBoardInfo(BoardInfoDto req) {
+//		int count = 0;
+//		count = bdo.insertBoardInfo(req);
+//		String result= "";
+//		try {
+//			if (count == 1) {
+//				result = "Y";
+//			}else {
+//				result = "N";
+//			}
+//		} catch (Exception e) {
+//			System.out.println("에러 메세지" + e);
+//		}
+//		
+//		return result;
+//	}
+	
+	
+	}
+}

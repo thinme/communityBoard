@@ -1,0 +1,11 @@
+package com.board.serv;
+
+import java.util.HashMap;
+
+import com.board.dto.BoardInfoDto;
+
+public interface BoardInfoServ {
+	
+	public HashMap<String, Object> getReadBoardInfo();
+
+}

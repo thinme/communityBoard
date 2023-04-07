@@ -1,0 +1,28 @@
+package com.board.servImpl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.board.dao.BoardInfoDao;
+import com.board.serv.BoardInfoServ;
+
+@Service
+public class BoardInfoServImpl implements BoardInfoServ {
+
+	@Autowired
+	private BoardInfoDao bdo;
+
+	@Override
+	public List<Map<String, Object>> getReadBoardInfo() {
+		System.out.println("************boardServImpl***********");
+		List<Map<String, Object>> list = bdo.getReadBoardInfo();
+		System.out.println(list);
+		return list;
+	}
+	
+	
+
+}
