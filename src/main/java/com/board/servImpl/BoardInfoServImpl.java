@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.board.dao.BoardInfoDao;
+import com.board.dto.BoardInfoDto;
 import com.board.dto.BoardInsertDto;
 import com.board.serv.BoardInfoServ;
+import com.board.vo.BoardInfoVo;
 
 
 
@@ -74,13 +76,12 @@ public class BoardInfoServImpl implements BoardInfoServ {
 
 	
 	  @Override
-	  public HashMap<String, Object> getBoardDetail(int bno) {
+	  public BoardInfoVo getBoardDetail(int bno) {
 	  System.out.println("************boardDetailServImpl***********");
 	  
-	  HashMap<String, Object> reqMap = new HashMap<String, Object>();
+	  BoardInfoVo bif = bdo.getBoardDetail(bno);
 	  
-	  reqMap.put("boardDetail", bdo.getBoardDetail(bno));
-	  
-	  return reqMap; }
+	  return bif;
+	  }
 	 
 }

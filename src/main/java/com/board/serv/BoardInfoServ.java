@@ -1,6 +1,5 @@
 package com.board.serv;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public interface BoardInfoServ {
 	/* public int getBoardListCnt(HashMap<String, Object> reqMap) */;
 	
 	//게시글상세보기
-	 public HashMap<String, Object> getBoardDetail(int bno); 
+	 public com.board.vo.BoardInfoVo getBoardDetail(int bno); 
 	
 
 }

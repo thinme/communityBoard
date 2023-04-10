@@ -20,10 +20,29 @@
 <input type="hidden" id="boardIdx" name="doardIdx" value="${boardDto.seqBoard}">
 <table>
 	<tr>
+		<th>제 목 :</th>
+		<td>${boardDto.title}</td>
+	</tr>
+	
+	<tr>
+		<th>작성자 :</th>
+		<td>${boardDto.id}</td>
+	</tr>
+	
+	<tr>
+		<th>내 용 :</th>
+		<td>${boardDto.contents}</td>
+	</tr>
+	
+	<tr>
 		<th>제목 :</th>
 		<td>${boardDto.title}</td>
 	</tr>
+	
 </table>
+<button type="button" id="upBtn">수정하기</button>
+<button type="button" id="delBtn">삭제하기</button>
+
 </div>
 </body>
 </html>

@@ -28,38 +28,6 @@ public class BoardInfoDto {
 	@JsonProperty("MOD_DATE")
 	private Date modDate;
 	
-	public int getSeqBoard() {
-		return seqBoard;
-	}
-	public void setSeqBoard(int seqBoard) {
-		this.seqBoard = seqBoard;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContents() {
-		return contents;
-	}
-	public void setContents(String contents) {
-		this.contents = contents;
-	}
-
-	public BoardInfoDto(int seqBoard, String id, String title, String contents, Date regDate, Date modDate) {
-		super();
-		this.seqBoard = seqBoard;
-		this.id = id;
-		this.title = title;
-		this.contents = contents;
-
-	}
+	
 	
 }

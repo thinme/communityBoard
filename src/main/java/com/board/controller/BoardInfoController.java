@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.board.dto.BoardInfoDto;
 import com.board.dto.BoardInsertDto;
 import com.board.serv.BoardInfoServ;
 
@@ -51,7 +52,7 @@ public class BoardInfoController {
 	
 	
 	  @RequestMapping(value= "getBoardDetail")
-	  public String getBoardDetail(@RequestParam("SEQ_BOARD")int bno, Model model) {
+	  public String getBoardDetail(@RequestParam(value="seqBoard", required=false)int bno, Model model) {
 		  System.out.println("getBoardDetail start");
 		  
 		  model.addAttribute("boardDto", bsi.getBoardDetail(bno));

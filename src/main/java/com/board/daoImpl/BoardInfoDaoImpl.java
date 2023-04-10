@@ -1,6 +1,5 @@
 package com.board.daoImpl;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.board.dao.BoardInfoDao;
 import com.board.dto.BoardInsertDto;
+import com.board.vo.BoardInfoVo;
 
 
 @Repository
@@ -33,10 +33,11 @@ public class BoardInfoDaoImpl implements BoardInfoDao {
 
 	
 	  @Override 
-	  public HashMap<String, Object> getBoardDetail(int bno) {
+	  public BoardInfoVo getBoardDetail(int bno) {
 	  System.out.println("*************boardDetailDaoImpl********************");
 	  
-	  return tpl.selectOne("BoardInfoDao.getBoardDetail", bno); }
+	  return tpl.selectOne("BoardInfoDao.getBoardDetail", bno); 
+	  }
 	 
 
 }
